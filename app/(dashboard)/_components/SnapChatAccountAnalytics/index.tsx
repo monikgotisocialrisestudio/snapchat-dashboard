@@ -10,7 +10,7 @@ const SnapChatAccountAnalytics = () => {
             <div className="text-base font-medium">
               Snapchat Account Analytics
             </div>
-            <div className="font-normal text-sm text-btn-foreground">
+            <div className="font-normal text-sm text-btn-foreground ">
               02 Sep, 2024
             </div>
           </div>
