@@ -1,14 +1,14 @@
 "use client";
 import { redirect } from "@/actions/navigate/redirect";
-import Spinner from "@/components/ui/spinner";
+// import Spinner from "@/components/ui/spinner";
 import { useToast } from "@/hooks/use-toast";
-import { PUBLIC_PATH_LIST } from "@/lib/constant";
+// import { PUBLIC_PATH_LIST } from "@/lib/constant";
 import { useAppDispatch } from "@/provider/store";
 import { setAuthData } from "@/provider/store/authentication";
 import { useValidateTokenMutation } from "@/provider/store/authentication/api";
 import { AuthUserType } from "@/provider/store/authentication/authentication.type";
 import { useAuthStore } from "@/provider/store/authentication/useAuthStore";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import React, { useEffect } from "react";
 
 const WithAuth = ({
@@ -18,7 +18,7 @@ const WithAuth = ({
   children: React.ReactNode;
   licenseKey: string;
 }) => {
-  const path = usePathname();
+  // const path = usePathname();
   const { toast } = useToast();
   const { authCheck, authenticated } = useAuthStore();
   const dispatch = useAppDispatch();

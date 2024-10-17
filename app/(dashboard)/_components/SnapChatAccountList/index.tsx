@@ -19,11 +19,12 @@ const accountsData: Account[] = [
   { id: getUniqueID(), name: "Lucia Beahan (Bot 5)", status: "Banned" },
   { id: getUniqueID(), name: "Lee Sawayn (Bot 6)", status: "Live" },
   { id: getUniqueID(), name: "Erin Koch (Bot 7)", status: "Banned" },
+  { id: getUniqueID(), name: "Erin Koch (Bot 8)", status: "Banned" },
 ];
 
 const SnapChatAccountList: React.FC = () => {
   return (
-    <Card className="h-[88vh]">
+    <Card>
       <CardHeader>
         <CardTitle>
           <div className="flex justify-between items-center">
@@ -46,7 +47,7 @@ const SnapChatAccountList: React.FC = () => {
           </div>
         </CardTitle>
       </CardHeader>
-      <CardContent className="overflow-y-auto h-[75vh]">
+      <CardContent className="overflow-y-auto">
         <AccountList accounts={accountsData} />
       </CardContent>
     </Card>

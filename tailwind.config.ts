@@ -33,6 +33,9 @@ const config: Config = {
         user: {
           foreground: "hsl(var(--user-logo))",
         },
+        icon: {
+          DEFAULT: "hsl(var(--icon-bg))",
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",

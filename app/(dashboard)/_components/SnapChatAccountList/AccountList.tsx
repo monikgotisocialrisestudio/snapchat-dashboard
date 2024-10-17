@@ -19,7 +19,7 @@ const AccountList: React.FC<AccountListProps> = ({ accounts }) => {
   return (
     <>
       {accounts.map((account) => (
-        <Card key={account.id} className="bg-subCard my-4">
+        <Card key={account.id} className="bg-subCard mb-4">
           <CardContent className="p-0">
             <div className="flex justify-between items-center my-auto p-4">
               <div className="flex items-center gap-2">
