@@ -44,14 +44,17 @@ function CESelect(props: propType) {
   } = props;
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-subCard">
       {label ? (
         <div className="mb-2.5 flex items-center gap-1">
           <Label htmlFor={htmlFor}>{label}</Label>
         </div>
       ) : null}
       <Select {...rest}>
-        <SelectTrigger {...triggerProps} className="flex items-center">
+        <SelectTrigger
+          {...triggerProps}
+          className="flex items-center text-btn-foreground"
+        >
           {" "}
           {/* Align items */}
           {icon && <span className="mr-2">{icon}</span>} {/* Render the icon */}

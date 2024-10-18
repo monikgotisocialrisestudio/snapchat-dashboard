@@ -7,7 +7,7 @@ export default async function RootLayout({
 }>) {
   return (
     <>
-      <div className="m-auto p-3">
+      <div className="m-auto">
         <Header />
         {children}
       </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "leaflet/dist/leaflet.css";
 import StoreProvider from "@/provider";
 // import WithAuth from "./hoc/with-auth";
 // import { LICENSE_KEY } from "@/lib/constant";

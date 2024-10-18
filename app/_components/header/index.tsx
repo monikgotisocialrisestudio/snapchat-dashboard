@@ -5,8 +5,8 @@ import React from "react";
 const Header = () => {
   return (
     <>
-      <div className="mx-auto flex justify-between py-6 px-5">
-        <div className="flex items-center gap-2">
+      <div className="mx-auto flex justify-between py-6 px-6">
+        <div className="flex items-center">
           <h3 className={SECTION_TITLE}>Dashboard</h3>
         </div>
       </div>

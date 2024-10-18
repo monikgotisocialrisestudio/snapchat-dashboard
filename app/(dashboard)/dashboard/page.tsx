@@ -5,7 +5,7 @@ import ActivePreset from "../_components/ActivePreset";
 
 const Dashboard = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[30%_40%_30%] p-4">
+    <div className="grid grid-cols-1 lg:grid-cols-[30%_40%_30%] px-6 pb-6">
       <div className="my-4 lg:my-0">
         <SnapChatAccountList />
       </div>

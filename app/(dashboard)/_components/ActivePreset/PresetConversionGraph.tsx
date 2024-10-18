@@ -10,7 +10,7 @@ import {
   LinearScale,
   ChartOptions,
 } from "chart.js";
-import ChartDataLabels from "chartjs-plugin-datalabels"; // Import the plugin
+import ChartDataLabels from "chartjs-plugin-datalabels";
 import Image from "next/image";
 import PlusIcon from "@/actions/public/assets/icons/plus.png";
 
@@ -30,14 +30,13 @@ const PresetConversionGraph = () => {
     labels: ["preset1", "preset2", "preset3"],
     datasets: [
       {
-        label: "", // Empty label for dataset
+        // label: "",
         data: [65, 59, 80],
         backgroundColor: ["#2C6BF1", "#3FC8E4", "#FF9F0A"],
         borderWidth: 1,
-        barThickness: 15,
-        borderRadius: 5,
-        barPercentage: 0.1,
-        categoryPercentage: 0.5,
+        // barThickness: 15,
+        // borderRadius: 5,
+        barPercentage: 0.3,
       },
     ],
   };
@@ -83,7 +82,7 @@ const PresetConversionGraph = () => {
       },
       y: {
         grid: {
-          display: false,
+          offset: true,
         },
         beginAtZero: true,
       },

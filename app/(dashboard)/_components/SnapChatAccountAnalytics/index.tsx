@@ -1,11 +1,13 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { StaticImageData } from "next/image";
 import React from "react";
+
 import AnalyticsCard from "./AnalyticsCard";
 import UserIcon from "@/actions/public/assets/icons/user.png";
 import LiveIcon from "@/actions/public/assets/icons/live.png";
 import IdleIcon from "@/actions/public/assets/icons/idle.png";
 import BannedIcon from "@/actions/public/assets/icons/banned.png";
-import { StaticImageData } from "next/image";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import CityLocation from "./CityLocation";
 
 const SnapChatAccountAnalytics: React.FC = () => {
   const data: {
@@ -21,7 +23,7 @@ const SnapChatAccountAnalytics: React.FC = () => {
 
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="py-4">
         <CardTitle>
           <div className="flex justify-between items-center">
             <div className="text-base font-medium">
@@ -35,6 +37,7 @@ const SnapChatAccountAnalytics: React.FC = () => {
       </CardHeader>
       <CardContent>
         <AnalyticsCard data={data} />
+        <CityLocation />
       </CardContent>
     </Card>
   );

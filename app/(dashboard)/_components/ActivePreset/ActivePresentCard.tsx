@@ -16,9 +16,9 @@ interface AnalyticsCardProps {
 
 const ActivePresentCard: React.FC<AnalyticsCardProps> = ({ folder }) => {
   return (
-    <div className="flex flex-wrap justify-between">
+    <div className="flex flex-wrap justify-between gap-y-4">
       {folder.map((folderData) => (
-        <div key={folderData.id} className="w-1/2 p-2">
+        <div key={folderData.id} className="w-[48.5%]">
           <Card className="bg-subCard">
             <CardContent className="p-0">
               <div className="p-4">
