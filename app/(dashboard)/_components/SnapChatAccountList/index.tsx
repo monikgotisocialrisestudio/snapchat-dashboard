@@ -6,6 +6,8 @@ import { Filter, Check, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AccountList from "./AccountList";
 import { getUniqueID } from "@/lib/utils";
+import * as Popover from "@radix-ui/react-popover";
+import FilterPopover from "./FilterModel";
 
 interface Account {
   id: string;
@@ -144,11 +146,67 @@ const accountsData: Account[] = [
       },
     ],
   },
+  {
+    id: getUniqueID(),
+    name: "Erin Koch (Bot 7)",
+    status: "Banned",
+    accountList: [
+      {
+        accountID: getUniqueID(),
+        details: "Details for Account 1",
+        accountName: "Account 1",
+      },
+      {
+        accountID: getUniqueID(),
+        details: "Additional Info for Account 1",
+        accountName: "Account 2",
+      },
+    ],
+  },
+  {
+    id: getUniqueID(),
+    name: "Erin Koch (Bot 7)",
+    status: "Banned",
+    accountList: [
+      {
+        accountID: getUniqueID(),
+        details: "Details for Account 1",
+        accountName: "Account 1",
+      },
+      {
+        accountID: getUniqueID(),
+        details: "Additional Info for Account 1",
+        accountName: "Account 2",
+      },
+    ],
+  },
+  {
+    id: getUniqueID(),
+    name: "Erin Koch (Bot 7)",
+    status: "Banned",
+    accountList: [
+      {
+        accountID: getUniqueID(),
+        details: "Details for Account 1",
+        accountName: "Account 1",
+      },
+      {
+        accountID: getUniqueID(),
+        details: "Additional Info for Account 1",
+        accountName: "Account 2",
+      },
+    ],
+  },
 ];
 
 const SnapChatAccountList: React.FC = () => {
   const [currentTitle, setCurrentTitle] = useState("Snapchat Account List");
   const [selectedAccount, setSelectedAccount] = useState<Account | null>(null);
+  const [isPopoverOpen, setIsPopoverOpen] = useState(true);
+
+  // Toggle the popover
+  const handlePopoverOpen = () => setIsPopoverOpen(true);
+  const handlePopoverClose = () => setIsPopoverOpen(!isPopoverOpen);
 
   const handleAccountSelect = (account: Account | null) => {
     if (account) {
@@ -176,13 +234,19 @@ const SnapChatAccountList: React.FC = () => {
             )}
             <div className="text-base font-medium">{currentTitle}</div>
             <div className="flex gap-2 ml-auto">
-              <Button
-                className="flex items-center rounded-md px-2 py-1 text-xs text-btn-foreground"
-                variant="outline"
-              >
-                <Filter className="h-5 w-5 mr-1" aria-hidden="true" />
-                Filter
-              </Button>
+              <Popover.Root>
+                <Popover.Trigger asChild>
+                  <Button
+                    className="flex items-center rounded-md px-2 py-1 text-xs text-btn-foreground"
+                    variant="outline"
+                    onClick={handlePopoverOpen}
+                  >
+                    <Filter className="h-5 w-5 mr-1" aria-hidden="true" />
+                    Filter
+                  </Button>
+                </Popover.Trigger>
+                <FilterPopover onClose={handlePopoverClose} />{" "}
+              </Popover.Root>
               <Button
                 className="flex items-center rounded-md px-2 py-1 text-btn-foreground"
                 variant="outline"
@@ -193,7 +257,7 @@ const SnapChatAccountList: React.FC = () => {
           </div>
         </CardTitle>
       </CardHeader>
-      <CardContent className="overflow-y-auto">
+      <CardContent className="overflow-y-auto max-h-[810px]">
         <AccountList
           accounts={accountsData}
           onAccountSelect={handleAccountSelect}

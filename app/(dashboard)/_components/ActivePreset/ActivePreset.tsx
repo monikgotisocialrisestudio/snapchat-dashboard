@@ -16,6 +16,11 @@ const folderData: {
   name: string;
   accountCount: number;
   presetName: string;
+  accountList: {
+    accountID: string;
+    details: string;
+    accountName: string;
+  }[];
 }[] = [
   {
     id: getUniqueID(),
@@ -23,6 +28,18 @@ const folderData: {
     name: "Folder 1",
     accountCount: 1542,
     presetName: "preset 1",
+    accountList: [
+      {
+        accountID: getUniqueID(),
+        details: "Details for Account 1",
+        accountName: "Account 1",
+      },
+      {
+        accountID: getUniqueID(),
+        details: "Additional Info for Account 1",
+        accountName: "Account 2",
+      },
+    ],
   },
   {
     id: getUniqueID(),
@@ -30,6 +47,18 @@ const folderData: {
     name: "Preset",
     accountCount: 1542,
     presetName: "preset 2",
+    accountList: [
+      {
+        accountID: getUniqueID(),
+        details: "Details for Account 1",
+        accountName: "Account 1",
+      },
+      {
+        accountID: getUniqueID(),
+        details: "Additional Info for Account 1",
+        accountName: "Account 2",
+      },
+    ],
   },
   {
     id: getUniqueID(),
@@ -37,6 +66,18 @@ const folderData: {
     name: "Folder 2",
     accountCount: 1542,
     presetName: "preset 3",
+    accountList: [
+      {
+        accountID: getUniqueID(),
+        details: "Details for Account 1",
+        accountName: "Account 1",
+      },
+      {
+        accountID: getUniqueID(),
+        details: "Additional Info for Account 1",
+        accountName: "Account 2",
+      },
+    ],
   },
   {
     id: getUniqueID(),
@@ -44,6 +85,18 @@ const folderData: {
     name: "Folder 3",
     accountCount: 1542,
     presetName: "preset 4",
+    accountList: [
+      {
+        accountID: getUniqueID(),
+        details: "Details for Account 1",
+        accountName: "Account 1",
+      },
+      {
+        accountID: getUniqueID(),
+        details: "Additional Info for Account 1",
+        accountName: "Account 2",
+      },
+    ],
   },
 ];
 

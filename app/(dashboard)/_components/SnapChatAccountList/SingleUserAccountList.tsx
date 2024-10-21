@@ -2,25 +2,27 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MoreVertical } from "lucide-react";
 import React from "react";
 import { FaUser } from "react-icons/fa";
-// import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 
 interface AccountDetailsProps {
+  open?: boolean;
   account: {
     name: string;
     accountList: { accountID: string; details: string; accountName: string }[];
   };
 }
 
-const SingleUserAccountList: React.FC<AccountDetailsProps> = ({ account }) => {
+const SingleUserAccountList: React.FC<AccountDetailsProps> = ({
+  account,
+  open,
+}) => {
   return (
     <>
       {account.accountList.map((acc) => (
         <div key={acc.accountID} className="flex items-center mb-4">
-          {/* <Checkbox className="mr-3 bg-subCard border-border w-5 h-5" /> */}
           <Card className="flex-grow bg-subCard">
             <CardContent className="p-0">
-              <div className="flex justify-between items-center my-auto p-4">
+              <div className="flex justify-between items-center my-auto p-3">
                 <div className="flex items-center gap-2">
                   <div className="h-11 w-11 rounded-full bg-user-foreground flex items-center justify-center">
                     <FaUser className="h-5 w-5 text-gray-400" />
@@ -40,9 +42,11 @@ const SingleUserAccountList: React.FC<AccountDetailsProps> = ({ account }) => {
           </Card>
         </div>
       ))}
-      <Button className="w-full rounded-lg py-6 bg-blue-600 hover:bg-blue-500 text-white">
-        Download All
-      </Button>
+      {!open && (
+        <Button className="w-full rounded-lg py-6 bg-blue-600 hover:bg-blue-500 text-white">
+          Download All
+        </Button>
+      )}
     </>
   );
 };

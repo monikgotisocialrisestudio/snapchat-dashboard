@@ -39,7 +39,7 @@ const AccountList: React.FC<AccountListProps> = ({
             onClick={() => handleAccountClick(account)}
           >
             <CardContent className="p-0">
-              <div className="flex justify-between items-center my-auto p-4">
+              <div className="flex justify-between items-center my-auto p-3">
                 <div className="flex items-center gap-2">
                   <div className="h-11 w-11 rounded-full bg-user-foreground flex items-center justify-center">
                     <FaUser className="h-5 w-5 text-gray-400" />

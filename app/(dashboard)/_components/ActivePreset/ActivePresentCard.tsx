@@ -8,18 +8,32 @@ export interface FolderData {
   name: string;
   accountCount: number;
   presetName: string;
+  accountList: {
+    accountID: string;
+    details: string;
+    accountName: string;
+  }[];
 }
 
-interface AnalyticsCardProps {
+interface ActivePresentCardProps {
   folder: FolderData[];
+  onCardClick?: (preset: FolderData) => void;
 }
 
-const ActivePresentCard: React.FC<AnalyticsCardProps> = ({ folder }) => {
+const ActivePresentCard: React.FC<ActivePresentCardProps> = ({
+  folder,
+  onCardClick,
+}) => {
   return (
     <div className="flex flex-wrap justify-between gap-y-4">
       {folder.map((folderData) => (
         <div key={folderData.id} className="w-[48.5%]">
-          <Card className="bg-subCard">
+          <Card
+            className="bg-subCard cursor-pointer"
+            onClick={() => onCardClick && onCardClick(folderData)}
+            role="button"
+            tabIndex={0}
+          >
             <CardContent className="p-0">
               <div className="p-4">
                 <div className="flex items-center">

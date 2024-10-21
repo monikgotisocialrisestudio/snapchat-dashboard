@@ -68,7 +68,7 @@ const LicenseKeyForm = () => {
   return (
     <div className="container mx-auto flex h-screen w-full flex-col items-center justify-center gap-10">
       <h1 className="mt-[-150px] scroll-m-20 text-5xl font-semibold tracking-tight">
-        Snapchat Dashboard
+        Hotbot Dashboard
       </h1>
       <Form {...form}>
         <form
